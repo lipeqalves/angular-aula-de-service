@@ -24,7 +24,10 @@ export class CardComponent {
   ) { }
 
   ngOnInit(): void {
-    this.service.getPokemon("ditto").subscribe(
+   this.getPokemon('pikachu')
+  }
+  getPokemon(searchName: string){
+    this.service.getPokemon(searchName).subscribe(
       {
         next: (res) => {
           this.pokemon = {
