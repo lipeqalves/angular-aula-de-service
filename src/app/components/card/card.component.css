@@ -18,6 +18,9 @@
   background-color: #616161;
   width: 80%;
   height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card__stats {
   display: flex;
