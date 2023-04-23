@@ -12,6 +12,7 @@
 }
 .card__title > h3 {
   color: #fff;
+  text-transform: uppercase;
 }
 .card__body {
   background-color: #616161;
@@ -21,12 +22,15 @@
 .card__stats {
   display: flex;
   justify-content: center;
+
 }
 
 .card__stats__type {
   color: #fff;
   background-color: coral;
+  text-transform: capitalize;
   padding: 5px;
   margin-right: 4px;
   border-radius: 5px;
+  font-weight: bold;
 }
