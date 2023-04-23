@@ -15,6 +15,11 @@ export class CardComponent {
   ) { }
 
 ngOnInit(): void{
-  this.service.getPokemon("bulbassaur")
+  this.service.getPokemon("ditto").subscribe(
+    {
+      next:(res) => console.log(res),
+      error:(err) => console.log(err)
+    }
+  )
 }
 }
