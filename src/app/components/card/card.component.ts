@@ -8,7 +8,14 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  pokemon!:PokemonData
+  pokemon: PokemonData = {
+    id: 0,
+    name: '',
+    sprites: {
+      front_default: ''
+    },
+    types: []
+  }
   name: string = "dito"
   attributesTypes: string[] = ['fire', 'rock']
 
@@ -16,21 +23,21 @@ export class CardComponent {
     private service: PokemonService
   ) { }
 
-ngOnInit(): void{
-  this.service.getPokemon("ditto").subscribe(
-    {
-      next:(res) => {
-        this.pokemon ={
-          id:res.id,
-          name:res.name,
-          sprites:res.sprites,
-          types:res.types
-        }
-        console.log(res)
-        console.log(this.pokemon)
-      },
-      error:(err) => console.log(err)
-    }
-  )
-}
+  ngOnInit(): void {
+    this.service.getPokemon("ditto").subscribe(
+      {
+        next: (res) => {
+          this.pokemon = {
+            id: res.id,
+            name: res.name,
+            sprites: res.sprites,
+            types: res.types
+          }
+          console.log(res)
+          console.log(this.pokemon)
+        },
+        error: (err) => console.log(err)
+      }
+    )
+  }
 }
