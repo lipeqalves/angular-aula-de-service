@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-card',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-name:string = "dito"
-attributesTypes:string[]=['fire', 'rock']
+  name: string = "dito"
+  attributesTypes: string[] = ['fire', 'rock']
+
+  constructor(
+    private service: PokemonService
+  ) { }
+
+ngOnInit(): void{
+  this.service.getPokemon("bulbassaur")
+}
 }
